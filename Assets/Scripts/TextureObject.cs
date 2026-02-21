@@ -1,4 +1,7 @@
 using UnityEngine;
+using WeArt.Components;
+using WeArt.Core;
+using Texture = WeArt.Core.Texture;
 
 namespace DefaultNamespace
 {
@@ -8,20 +11,25 @@ namespace DefaultNamespace
 
 
         //------Serialized Fields-------//
-        [Range(0, 1f)] public float Stiffness;
-        [Range(0, 1f)] public float Temperature;
-        [Range(0, 1f)] public float Texture;
+        [SerializeField] private WeArtTouchableObject _touchableObject;
 
         //------Private Variables-------//
+        
 
 
         #region UNITY_METHODS
-
+        
 
         #endregion
 
         #region PUBLIC_METHODS
 
+        public void SetTouchableObject(float temperature, float stiffness, TextureType textureType)
+        {
+            _touchableObject.SetTemperature(temperature);
+            _touchableObject.SetHapticForce(stiffness);
+            _touchableObject.SetTextureType(textureType);
+        }
 
         #endregion
 

@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
+using WeArt.Core;
 using Random = UnityEngine.Random;
+using Texture = WeArt.Core.Texture;
 
 namespace DefaultNamespace
 {
@@ -54,9 +56,7 @@ namespace DefaultNamespace
                     var pos = startPos + new Vector3(j* texturesDimensionsX, 0, -i* texturesDimensionsZ);
                     var textureObject = Instantiate(TextureObjectPrefab, pos, Quaternion.identity, textureParent.transform);
                     textureObject.transform.localScale = new Vector3(texturesDimensionsX, texturesDimensionsY, texturesDimensionsZ);
-                    textureObject.Stiffness = Random.Range(0f, 1f);
-                    textureObject.Temperature = Random.Range(0f, 1f);
-                    textureObject.Texture = Random.Range(0f, 1f);
+                    textureObject.SetTouchableObject(Random.Range(0f, 1f),Random.Range(0f, 1f), GetRandomTextureType());
                 }
             }
 
@@ -65,7 +65,12 @@ namespace DefaultNamespace
         #endregion
 
         #region PRIVATE_METHODS
-
+        
+        private TextureType GetRandomTextureType()
+        {
+            int randomIndex = Random.Range(WeArtConstants.minTextureIndex, WeArtConstants.maxTextureIndex + 1);
+            return (TextureType)randomIndex;
+        }
 
         #endregion
     }

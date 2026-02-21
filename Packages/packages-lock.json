@@ -135,6 +135,14 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.weart.sdk": {
+      "version": "file:/Users/davudduran/Desktop/WEART_SDK_Unity_v2.0.0",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.textmeshpro": ""
+      }
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
