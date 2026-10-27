@@ -148,8 +148,7 @@ namespace DefaultNamespace
                     }
                     else
                     {
-                        textureObject.SetTouchableObject(0f, 0f, TextureType.Aluminium); 
-                    }
+                        textureObject.SetTouchableObject(0.3f, 0f, TextureType.Aluminium);                    }
                 }
             }
             Debug.Log("Object Generation Complete.");
@@ -264,7 +263,11 @@ namespace DefaultNamespace
                 
                 if (pt.SourceName.Contains("3_mm"))
                 {
-                    cell.SumTemperature += 1f;
+                    cell.SumTemperature += 0.7f; 
+                }
+                else 
+                {
+                    cell.SumTemperature += 0.3f; 
                 }
                 
                 if (cell.LetterFrequencies.ContainsKey(pt.SourceType))
